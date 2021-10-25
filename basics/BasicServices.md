@@ -48,4 +48,7 @@ like: python, node, docker, java, nginx, haproxy, etc and run them.
 Upon creating EC2 instance from either AWS-CLI or AWS-UI you can specify a property for AWS to create keys for you.
 you can later download and use these keys to SSH into remote machine and do anything you want there like you would do
 on your own one using terminal.
+#Billing
+Your Amazon EC2 usage is calculated by either the hour or the second based on the size of the instance, operating system,
+ and the AWS Region where the instances are launched. Pricing is per instance-hour consumed for each instance, from the time an instance is launched until it is terminated or stopped.
 
