@@ -40,4 +40,12 @@ Route 53 is DNS service from AWS, which makes possible for developers to setup d
 A: url to ipv4, AAAA: url to ipv6, cname: url to url, alias: url to aws resource. Router 53 also has an ability to setup system health checks for
 systems that you design in AWS infrastructure. 
 ### Cloud Front
-Cloud Front is AWS-s CDN ( Content Delivery Network ). 
+Cloud Front is AWS-s CDN ( Content Delivery Network ).
+
+## Storage Service
+### S3 ( Simple Storage Serivce)
+S3 is an distributed and reliable object storage. By object storage is meant persistent file system where
+one can store any kind of huge/or not huge files like: photos, videos, files, documents and even movies ( yup, for information netflix
+uses S3 storages to store movies and TV series ). 
+### EBS ( Elastic Block Storage )
+ 
