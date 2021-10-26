@@ -29,4 +29,13 @@ all other concerns are takeb by AWS instead of him.
 
 ## Networking Service
 ### VPC ( Virutal Private Cloud )
-
+Virtual Private Cloud is a service which allows user to have fully isolated and controlled private network, where user can
+launch all the services like EC2, load balancers and etc. After launching them user should himself/herself specify communication
+mechanisms/paths/routes for VPC comunicating to outer world. For this user will have to configure different subnets of VPC ( since
+different parts might have different conventions/topologies of network and security). For example web service might be in a public 
+subnet and database server in private subnet since no one should have direct access to database part from outer world. for public subnet
+another service called public internet gateway will be used to direct all the traffic from and to public subnet to outer world.
+### Route 53
+Route 53 is DNS service from AWS, which makes possible for developers to setup different records in AWS-s DNS servers. record type might be:
+A: url to ipv4, AAAA: url to ipv6, cname: url to url, alias: url to aws resource. Router 53 also has an ability to setup system health checks for
+systems that you design in AWS infrastructure. 
