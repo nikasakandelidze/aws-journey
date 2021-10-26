@@ -39,3 +39,5 @@ another service called public internet gateway will be used to direct all the tr
 Route 53 is DNS service from AWS, which makes possible for developers to setup different records in AWS-s DNS servers. record type might be:
 A: url to ipv4, AAAA: url to ipv6, cname: url to url, alias: url to aws resource. Router 53 also has an ability to setup system health checks for
 systems that you design in AWS infrastructure. 
+### Cloud Front
+Cloud Front is AWS-s CDN ( Content Delivery Network ). 
