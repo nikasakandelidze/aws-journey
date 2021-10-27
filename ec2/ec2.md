@@ -45,3 +45,13 @@ configurable. One common pattern for many development teams is to have several d
 unpredictable manner.
 - Tenancy, while creating EC2 instance you have the ability to specify tenancy model for your virtual machine.  Tenancy model is all about on how isolated physical machines you want your
 programs to be run. Default tenancy model is that your program will be run on the same server that some other aws customer's. ( of course they'll be totally isolated, just simply it's sometimes the case that we need our instnaces to be run on totally isolated servers, not sharing physical servers with anyone ). with tenancy model AWS also gives you ability to configure it. 
+
+## Block storages with EC2
+When you create EC2 instance either from aws console or cli tool you have to configure storage device for your running virtual server. As for anything in AWS services
+there are several alternatives for this mechanism too. In this context by storage we mean persistent storage, HDD or SSD where we can store files and blocks of data.
+There re several alternatives to use as storage for EC2 instance:
+- Instance Store - block storage hard drive/ssd ( you can choose whichever you want ) that is directl mounted on the physical machine that is used to run the instance of EC2.
+This is mostly used to store some temporary data and not too miision critical or valuable data since lifecycle of this type of storage is hardly linked with lifecycle of EC2, so
+if EC2 instance gets stopped or terminated this data gets cleared and we can't recover from it. Cached and stuff like that can be a good data domain to store here.
+- EBS ( Elastic Block Storage ) - block storage mechanism that is a persistent/fail safe and distributed variant of local instance store. AWS admin/creator of this resource can specify
+loads and loads of configurations for this type of storage. The main idea/differnece for EBS apart for instance storage is that it's lifecycle is larger that that of an EC2 instance. So even if EC2 instance gets stopped or terminated data in EBS gets stored and active. Also one important thing is that when using EBS you can unmount and remount EBS to another EC2 instance in the live and you can't do this using Instance Store, Since instance store is wired with the physical machine where EC2 is running.
