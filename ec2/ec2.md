@@ -33,4 +33,15 @@ There are several instance type families in aws:
 - General purpose family consists of types that have uniformly distributed cpu, ram, storage and etc. So basically every other resource
 in this family's instance types are in the middle.
 
- 
+## Settings up EC2
+For succesfully and securely using EC2 instances there are 3 key points to configure:
+- AWS Region, in which AWS region will your EC2 instance be published, Usually for production instances Region closest to your customers is a 
+correct answer. While choosing a region also an important part is that if you are have some sensitive information in your system to deploy and want
+this system to fall under some specific location's ( country's ) jurisdiction than choosing AWS glolbal region closest to this location is the best solution.
+EC2 resources can only be managed when you are "located within" that specific region that instance in deployed in. You can update/change location easily from console and UI.
+Bear in mind that the costs and even functionality of services and features might vary between regions. It’s always a good idea to consult the most up-to-date official documentation
+- VPC ( Virtual Private Cloud ) is a isolated networking entity where you must deploy your EC2 instance for securing and many more benefits. VPC have nearlly all the networking details
+configurable. One common pattern for many development teams is to have several different VPC-s each for different development stage-s. let's say VPC1 - dev env. VPC2 - stage env, VPC3 - production env. This way all the environments are totally isolated frome each other and can't ahrm each other, since on development environment teams might be testing and changing configurations in an 
+unpredictable manner.
+- Tenancy, while creating EC2 instance you have the ability to specify tenancy model for your virtual machine.  Tenancy model is all about on how isolated physical machines you want your
+programs to be run. Default tenancy model is that your program will be run on the same server that some other aws customer's. ( of course they'll be totally isolated, just simply it's sometimes the case that we need our instnaces to be run on totally isolated servers, not sharing physical servers with anyone ). with tenancy model AWS also gives you ability to configure it. 
