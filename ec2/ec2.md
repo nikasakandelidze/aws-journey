@@ -72,9 +72,10 @@ AWS gives account administrator several tools to guarantee the security of EC2 i
 - Securty groups: which are same as fire walls for your ec2 instance networks in aws. Security groups control total packet flow from and to your ec2 instnace. By default security group will deny all incoming traffic
 and permit all outgoing traffic. One common practive to use securtiy groups for is to allow packet for ssh protocol on port 22 only for those packets that have source ip address following/matching patterns 
 of ip addresses from you office. One specific thing is that security groups are used specifically for configuring ec2 instance networks, there are also different tools to configure networks on a bigger scale like on subnets or even vpc scale.
-we'll discuss it on VPC topic seperately.
+we'll discuss it on VPC topic seperately. Security groups are instnace level.
 - IAM roles: Identity access management. Using this service/mechanism root user of aws account can create other accounts and assing them specific roles, by which will be determined what resources can they access.
 Using roles, you can give a limited number of entities (other resources or users) exclusive
 access to resources like your EC2 instances. But you can also assign an IAM role to an EC2 instance so that processes running within it can access the external tools—like an RDS database instance—it needs to do its work.
 - NAT devices: One common pattern to allow your ec2 reach the internet ( for updates, patches...etc ) but to prohibit internet from reaching your instance, you will create a new public subnet, place there NAT gateway, also you will
-have your ec2 instances in a separate (private) subnet apart from NAT, this NAT will have  access to internet and  will prohibit packets from internet flowing into you ec2 instnaces but will allow ec2 instances to use internet.
+have your ec2 instances in a separate (private) subnet apart from NAT, this NAT will have  access to internet and  will prohibit packets from internet flowing into you ec2 instnaces but will allow ec2 instances to use internet. Solutions with
+NAT are subnet level solutions and not single instnace level ones, so this is broader that secuirty groups. Also there might be both usued: security groups and NAT-s for double security reasons.
