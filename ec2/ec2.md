@@ -55,3 +55,14 @@ This is mostly used to store some temporary data and not too miision critical or
 if EC2 instance gets stopped or terminated this data gets cleared and we can't recover from it. Cached and stuff like that can be a good data domain to store here.
 - EBS ( Elastic Block Storage ) - block storage mechanism that is a persistent/fail safe and distributed variant of local instance store. AWS admin/creator of this resource can specify
 loads and loads of configurations for this type of storage. The main idea/differnece for EBS apart for instance storage is that it's lifecycle is larger that that of an EC2 instance. So even if EC2 instance gets stopped or terminated data in EBS gets stored and active. Also one important thing is that when using EBS you can unmount and remount EBS to another EC2 instance in the live and you can't do this using Instance Store, Since instance store is wired with the physical machine where EC2 is running.
+
+You can attach as many EBS-es to one ec2 instance as you like, but one concrete EBS can be attached maximum up to 1 ec2 instance.
+
+## Ip addresses
+By default all created instances of ec2 have ip address using which you can connect to them ( ofcourse if network configurations allow you to ), but 
+one main point is that this IP address is not persistent, which means that IP address doesnt persist between rebooting of ec2 instance. So most likely your ip address before
+and after rebooting of an instance will not be same.
+### Elastic ip address
+AWS also has a solution to the problem stated above and the solution is Elastic IP address. Elastic ip is public IP address mapped to your account and you can
+use this allocated IP to map it to instnaces and not loose it between reboots.An Elastic IP address is a public IPv4 address, which is reachable from the internet.
+ If your instance does not have a public IPv4 address, you can associate an Elastic IP address with your instance to enable communication with the internet. For example, this allows you to connect to your instance from your local computer.
