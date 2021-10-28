@@ -9,3 +9,4 @@ new ec2 instnaces, based on some preconfigured templates, can be spawned automat
 User can specify desired, min and max number of ec2 instances active and depending on traffic and load auto scalling group will be managed automatically, also
 custom logic alarms can be set to trigger auto scalling mechanism of ec2. Using this service of aws you can be sure that your cluster of machines running some
 business logic will be safe and ok on every kind of situation and workloads. 
+Scalling policies can be on cpu. network, some custom metrics or even simply scheduled ( since some businesses might know their customers usage patterns better )
