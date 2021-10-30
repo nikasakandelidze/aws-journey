@@ -37,3 +37,6 @@ Each bucket-s url you create with your account will follow next pattern: s3.amaz
 As you’ve seen, S3 stores objects within a bucket on a flat surface without subfolder hierar- chies. However, you can use prefixes and delimiters to give your buckets the appearance of a more structured organization.
 A prefix is a common text string that indicates an organization level. For example, the word contracts when followed by the delimiter / would tell S3 to treat a file with a name like contracts/acme.pdf as an object that should be grouped together with a second file named contracts/dynamic.pdf.
 S3 recognizes folder/directory structures as they’re uploaded and emulates their hierar- chical design within the bucket, automatically converting slashes to delimiters. That’s why you’ll see the correct folders whenever you view your S3-based objects through the console or the API.
+
+## S3 pricing
+Price: Price of storage you use + price of additional fetch/update/upload for already stored files.
