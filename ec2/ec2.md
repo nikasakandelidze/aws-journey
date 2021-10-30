@@ -59,9 +59,19 @@ loads and loads of configurations for this type of storage. The main idea/differ
 You can attach as many EBS-es to one ec2 instance as you like, but one concrete EBS can be attached maximum up to 1 ec2 instance.
 
 ## Ip addresses
-By default all created instances of ec2 have ip address using which you can connect to them ( ofcourse if network configurations allow you to ), but 
+By default all created instances of ec2 have ip addresses, private ip and public ip, private ip address is persistent and is used to communicate between components within same VPC, public ip-s are ip-s  using which you can connect to ec2 instances from public network ( internet )  ( ofcourse if network configurations allow you to ), but 
 one main point is that this IP address is not persistent, which means that IP address doesnt persist between rebooting of ec2 instance. So most likely your ip address before
 and after rebooting of an instance will not be same.
+
+One main question that might appear to the reader is what is the reason of having public and private ip addresses. and what can private ip address do what public ip can not.
+here are some coll ideas from stackoverflow:
+	If you use the private IP to communicate, traffic will stay within the VPC, it will not be routed out, the routing table will route it internally
+If you use the public IP to communicate, traffic will go out to internet (through NAT or internet gateway) and come back to your VPC. This unnecessary roundtrip can
+be avoided if you use the private IP
+Since private IP is internal, it is more secure since there is no chance for third party to inspect/inject the traffic
+No data transfer charge if the traffic stays internal to VPC (and same availability zone). But if data flows out of VPC, you need to pay for data xfer charge
+Unless you expect your instance to accept traffic from outside, you should not launch your instances in public subnet or assign public IPs to it
+
 ### Elastic ip address
 AWS also has a solution to the problem stated above and the solution is Elastic IP address. Elastic ip is public IP address mapped to your account and you can
 use this allocated IP to map it to instnaces and not loose it between reboots.An Elastic IP address is a public IPv4 address, which is reachable from the internet.
