@@ -1,7 +1,7 @@
 # AWS S3 Storage mechanism
 ## What is AWS s3
 AWS S3 also known as simple storage service, is a service provided by Amazon for creating easy to use, high level abstraction for
-stroing files and data in reliable and consistent manner. Best use cases for aws s3 are next:
+stroing files and data ( all the different kinds of data stored abstarcted under object type, that's why it's called obejct storage )  in reliable and consistent manner. Best use cases for aws s3 are next:
 - Maintaining backup archives, log files, and disaster recovery images
 - running analytics for data at rest
 - static website hosting
@@ -15,4 +15,9 @@ On the other hand s3 service is more of a high level, easy to use mechanism for 
 is for read heavy usecases ( where write once read many times situation arises ). Like: storing movies, images, documents and etc.
 The simple design of s3-s api avoids some of the OS-related complications of block storage and allows anyone easy access to any amount of professionally
 designed and maintained storage capacity.
-When we write data into s3 alongside our actual data some metadata is also associated with it which has some security and access information in it stored.
+When we write data into s3 alongside our actual data some metadata is also associated with it which has some security and access information in it storedi.
+
+## Usecases
+Generally AWS s3 can be an excellent alternative to all the cases where file system on propertary data center servers were used. Storing all the files retriecing them and etc.
+In some cases S3 might be an even better alternative since it's data is reliable ( replicated ) and safe. and also has bunch of custom configuration possibilites for specializing
+base mechanisms of s3 for: frequent reads, frequent writes and etc...
