@@ -55,6 +55,23 @@ main benefits for multi part upload is:
   you must explicitly complete or stop the multipart upload
 - Begin an upload before you know the final object size - You can upload an object as you are creating it.
 
+## Protecting data on S3
+Common practice is to secure data saved on s3, there are several mechanisms for doing it and all of them are using some kind of an encryption so that
+no raw data lays in s3 buckets.
+Main categories for s3 data securty are next:
+- client side encryption - encrypting data before sending it to s3 object store to maximaize security. Good choice if data you are storing on s3 is very
+sensitive and must stay safe. This way even if AWS employee looks directly into your s3 buckeet they won't make any sense from data there since it would be encrypted and no
+decryption key would be known to them.
+- server side envryption - send data to s3 store in a raw mannet/format and let s3 bucket itself manage encrypting data before it stores, and right before fetching data form
+s3 objects decrypt them. So basically client level APi fro this kind of security stays same since all security steps happen on server side. Usually KMS ( key management service ) is used for this kind of tasks.
 
-
-
+## Logging
+By default logging information for aws s3 storage is off. You can turn this logging mechanism on and it will save all actions with speecified s3 buckets.
+The main configuration options you must specify is which s3 bucket you want to configure/mintor/watch and where/in which s3 bucekt to save these logs. We shouldn't
+always turn logging mechanisms on since it generated quite a lot of data and it won't be always optimal. S3 generated logs might have a slight delay before appearing in files
+and they'll have usually next pieces of data:
+	- The account and IP address of the requestor
+	- The source bucket name
+	- The action that was requested (GET, PUT, POST, DELETE, etc.)
+	- The time the request was issued
+	- The response status (including error code)
