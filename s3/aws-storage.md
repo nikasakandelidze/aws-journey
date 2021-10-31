@@ -40,3 +40,21 @@ S3 recognizes folder/directory structures as they’re uploaded and emulates the
 
 ## S3 pricing
 Price: Price of storage you use + price of additional fetch/update/upload for already stored files.
+
+## Uploading large files
+Uploading large files/objects into aws s3 might be problematic. There are several limitations placed by aws itself on this service, which are:
+- single object might not be larger than 5tb ( tera bytes )
+- individual uploads can't be larger than 5 gb-s
+Even though these numbers of limitaitons are quite high there are some specific good to follow practices which specify that:
+it's recommended to use mutli part upload when working with files/objects bigger than 100 mb-s. Multi part upload is specific mechanism/api implemented 
+to help with working with big giles with s3 service.
+main benefits for multi part upload is:
+- Improved throughput - You can upload parts in parallel to improve throughput.
+- Quick recovery from any network issues - Smaller part size minimizes the impact of restarting a failed upload due to a network error.
+- pause and resume object uploads - You can upload object parts over time. After you initiate a multipart upload, there is no expiry;
+  you must explicitly complete or stop the multipart upload
+- Begin an upload before you know the final object size - You can upload an object as you are creating it.
+
+
+
+
