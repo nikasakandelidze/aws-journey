@@ -75,3 +75,20 @@ and they'll have usually next pieces of data:
 	- The action that was requested (GET, PUT, POST, DELETE, etc.)
 	- The time the request was issued
 	- The response status (including error code)
+
+## Durability, Reliability and availability
+### Durability
+As aws states, s3 has 99.99999 percent reliability ( which means that there is very small chance for you to loose your data ). Good thing about data stored in s3 buckets is that they are automatically replicated within different availability zones in the same region. S3 buckets are replicated across availability zones within the same region by default, except the One Zone class. However, S3 supports cross-region replication (CRR), wherein S3 buckets are asynchronously copied to different regions.
+### Availability
+Your data stored on aws s3 storage will be up and available 99.99999 percent of the time during the whole year, which means during 1 year maximum 9 hours of
+downtime might occur for s3 storage objects.
+
+## Data consistency
+Aws s3 has some specifics with data consistency. This topic basically arises, since s3 is under the hood distributed storage. S3 storage has 2 different
+consistency models for 2 different use cases:
+- Every PUT ( creating new object ) request is guaranteed to have "Strong read after write" consistency, Which means that if we request serach data right
+after inserting it into datbase we will get updated data without any problems or inconsistencies of stale  data.
+- Amazon S3 offers eventual consistency for overwrite PUTS and DELETES in all Regions. Updates to a single key are atomic. For example, if you PUT to an existing key, a subsequent read might return the old data or the updated data, but it never returns corrupted or partial data.
+
+Eventual consistency: faster but has a chance of getting stale and out of date data.
+Strong consistency: slower ( since nodes are blocked from reading until data updates to all nodes ) but always guarantee new data. 
