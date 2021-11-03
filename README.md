@@ -9,6 +9,8 @@
 	- [Advanced EC2](https://github.com/nikasakandelidze/aws-notes/blob/main/ec2/advanced-ec2.md)
 - [S3](https://github.com/nikasakandelidze/aws-notes/tree/main/storage)
 	- [S3 general](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/aws-storage.md)
+- [VPC](https://github.com/nikasakandelidze/aws-notes/blob/main/vpc)
+	- [VPC general](https://github.com/nikasakandelidze/aws-notes/blob/main/vpc/vpc.md)
 - [legal](https://github.com/nikasakandelidze/aws-notes/blob/main/legal/legal.md)
 
 ## One of the resources that has all the data in it very detailed is official docs:
