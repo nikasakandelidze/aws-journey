@@ -24,3 +24,8 @@ So basically it's like a vlan, where each entity in same vlan has same network a
 use case for subnets is that in your vpc and in your system you'll have some kind of resources that you want to be accessible from the internet
 like web servers and other resources that you want to be private and only limited and strongly provisioned resources can access this private ones, like databases let's say.
 In these cases we'd have 2 different subnets, 1 public ( connected to internet via internet gateway ) and 1 private with strong and strict network configurations. 
+
+## Availability Zones
+line we said above that each VPC must be only in single Region, each subnet must me in one availability zone. As you remember availability zones
+are physically decoupled data centers in one region. Decoupled in a way that outage in one datacenter doesn't effect the second one. So to be maximally
+safe if you want to have several ec2 instances we must create several subnets in several different availability zones and deploy instances of ec2 there.
