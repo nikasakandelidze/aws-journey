@@ -81,3 +81,5 @@ communication in a subnet between several ec2 instances you can't do this task u
 configure comunication tasks between subnets ) but security groups can easily solve problems like these since they are instance level ( more like ENI-s level ) configuration
 mechanisms 
 
+One subnet can have only one NACL. By default in VPC there is one NACL created which is associated automatically with subnets.
+Unlike a security group, which is stateful, an NACL is stateless, meaning that it doesn’t use connection tracking and doesn’t automatically allow reply traffic. This is much like an access control list (ACL) on a traditional switch or router. The stateless nature of the NACL is why each one is preconfigured with rules to allow all inbound and outbound traffic, as discussed in the following sections
