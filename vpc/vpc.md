@@ -72,3 +72,12 @@ Route table is like a real router in your peronal/home network which has many su
 Security groups are also entities for securing ec2 instances network by configuring them accordingly. Unlike routing tables security groups are more local
 to ec2 instances,  and more concretely to ec2-s elastic network interface. Each ENI must have according security group associated with it. Since most of the time ec2 instances
 have only one ENI people assume that security groups are assigned to ec2 instances but actually if ec2 instance has multiple ENI-s attached ( which is pretty normal case ) than several security groupsmust be specified for all these unique ENI-s.
+Security groups are like firewalls for ec2 instances.
+
+## Network Access Control List
+NACL is firewall like machanism like security groups, but security group is attached specifically to ENI-s of ec2 instances and NACL-s are for whole subnets.
+Inbound and Outbound rules need to be configured too for NACL-s. The main usecase difference between NACL-s and Security Groups is that if you want to configure
+communication in a subnet between several ec2 instances you can't do this task using NACL since it's subnet level configuration mechanism ( meaning that it can
+configure comunication tasks between subnets ) but security groups can easily solve problems like these since they are instance level ( more like ENI-s level ) configuration
+mechanisms 
+
