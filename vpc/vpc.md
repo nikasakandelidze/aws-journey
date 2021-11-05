@@ -49,3 +49,26 @@ to some concrete ec2 instance after it's created.
 Basically network packets that we think that we send to ec2 instances are actually transfered and sent to Elastic network interfaces located/attached to that ec2 instance.
 So actually in case our ec2 instance dies and we have an ENI created with independent lifecycle,  we can simply  re attach this network interface to a new replicated ec2 instnace and if we do
 this fast enough no user will understand that actual original machine broke down.  ( OF course if our app serving on ec2 instance is stateless )
+
+## Internet gateway
+An Internet gateway serves two purposes: to provide a target in your VPC route tables for Internet-routable traffic, and to perform network address translation (NAT) for instances that have been assigned public IPv4 addresses.
+
+By default aws VPC and all resources located in it are isolated from public internet, in most cases any system we build we dwant some part of it to be accessible from public internet.
+Internet gateway is the exact service that enables specific subnets in vpc to become public, and this means that all services/entities located in this specific usbnet also become 
+public. We must create Internet gateway manually and associate it with some subnet of vpc. You can associate only one IG to one vpc.
+
+By making some parts public using IG, aws associates public ip addresses to your resources ( let's say ec2 instances ) so this way your ec2 instance has at least 2 ip addresses
+public ( from internet gateway ) and private
+
+## Route tables
+A route table contains a set of rules, called routes, that are used to determine where network traffic from your subnet or gateway is directed.
+When you create a VPC, AWS automatically creates a default route table called the main route table and associates it with every subnet in that VPC. You can use the main route table or create a custom one that you can manually associate with one or more subnets.
+
+A subnet cannot exist without a route table association. If you do not explicitly associate a subnet with a custom route table you’ve created, AWS will implicitly associate it with the main route table.
+
+Route table is like a real router in your peronal/home network which has many subnets and which you can configure for specifi IO packets; 
+
+## Security groups
+Security groups are also entities for securing ec2 instances network by configuring them accordingly. Unlike routing tables security groups are more local
+to ec2 instances,  and more concretely to ec2-s elastic network interface. Each ENI must have according security group associated with it. Since most of the time ec2 instances
+have only one ENI people assume that security groups are assigned to ec2 instances but actually if ec2 instance has multiple ENI-s attached ( which is pretty normal case ) than several security groupsmust be specified for all these unique ENI-s.
