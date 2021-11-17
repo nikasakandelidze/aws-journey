@@ -100,4 +100,4 @@ security
  group configurations for inbound and outbound rules). We'll also need to install, patch and update programs on the private subnet's instances. for this to happen securely so that only resources located in private subnet can connect to internet but not vice versa, we create NAT gateway in public subnet,
  and direct all outbound traffic from private subnet to NAT gateway and tell NAT gateway to
 direct traffic to internet gateway. By specifying only these mechanisms and not inbound ones NAT will securely communicate with internet and provide all needed services to private subnet.   
-[diagram](./diagram.png)
+![diagram](./diagram.png)
