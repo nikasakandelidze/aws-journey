@@ -83,3 +83,21 @@ mechanisms
 
 One subnet can have only one NACL. By default in VPC there is one NACL created which is associated automatically with subnets.
 Unlike a security group, which is stateful, an NACL is stateless, meaning that it doesn’t use connection tracking and doesn’t automatically allow reply traffic. This is much like an access control list (ACL) on a traditional switch or router. The stateless nature of the NACL is why each one is preconfigured with rules to allow all inbound and outbound traffic, as discussed in the following sections
+
+## NAT
+NAT is a mechanism which is used for isolating network entities and leaving them secure. Network Address Translation is a mechanism that lays between client and network and
+transforms from/to ip addresses according to rules. Best usecase for NAT gateway in AWS vpc is for the case with image below.
+
+Case study:
+	Let's say we have an application with front-end and back-end. and we want to deploy it in AWS. We can create a vpc ( ofcourse with all security groups and
+NACL-s in it), create 2 subnets: 1) PrivateSubnet 2) PublicSubnet. The difference between public and private subnets is that resources within public subnet will be
+accessible from the internet and no resources within private subnet can be accessed in that way. We'll have client side app ( maybe react, angular, vue ), server-side app: ( Java, nodejs, Python..),
+ and database ( PostgreSQL, MySQL... ). Of course since databases are always secure intensive we'll put it in private subnet so noone from internet will even have a chance to directly conenct to it 
+without specific permissions. we'll put our backend app and front-end app(on web server) in the public subnet.
+Since we'll need to serve our client-side app to actual client's browsers and since these clinet side app will need to communicate to our backend API fron the internet. thisbackend API will have
+ specific configurations so that it will be able to communicate with database being in private subnet ( for this to happen we'll need specific
+security
+ group configurations for inbound and outbound rules). We'll also need to install, patch and update programs on the private subnet's instances. for this to happen securely so that only resources located in private subnet can connect to internet but not vice versa, we create NAT gateway in public subnet,
+ and direct all outbound traffic from private subnet to NAT gateway and tell NAT gateway to
+direct traffic to internet gateway. By specifying only these mechanisms and not inbound ones NAT will securely communicate with internet and provide all needed services to private subnet.   
+[diagram](./diagram.png)
