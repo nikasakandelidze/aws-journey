@@ -31,3 +31,18 @@ need to manually configure replication of the data so that if one node dies or g
 
 - Running RDS as your storage: Pros: 1)Ready of the shelf. 2)Many configuration capabilities like: replication, failover, clustering just by clicking a button. 3) No need for custom
 configuration, updates, patches and provisioning of databse system, it all happens on AWS service side. Cons: 1) A bit costly if not used correctly.
+
+## Scaling out
+If your created db preformace is not enough aws always allows you to scale out your database storage either vertically or horizontally.
+- You can scale vertically by throwing more resources to it. More memory, more IOPS, more CPU....
+- You can scale horizontally by creating read replicas of your database, this case is perfect for read heavy applications, since your primary
+database will still be write master, it will recieve all the writes and asynchronosuly replicate them on other replicas. Than clients will be load
+balanced between read replicas for further reads.
+
+## Failover
+During the deployment of AWS RDS and also during it's operating you can specify Multi Availability zone deployment, which means that Primary RDS node will have
+it's replicated variant ready for failover in different AZ, so if one AZ experiences an outage no data loss, service loss will be experienced by users. Failover
+will happen automatically, RDS mechanism will update it's DNS record for subsequent requests to route to backup server. Failover takes from 60 to 120 seconds but in
+case of high load if transactions or writes and reads it might increase.
+
+THe only purpose of Multi AZ is to create a failover replica and not a Read replica. Replication between Multi AZ nodes happen synchronously.
