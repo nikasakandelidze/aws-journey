@@ -12,3 +12,8 @@ and etc. But it is also very important to  be able to create VPC-s from scratch.
 7) Create attachments for both VPC-s in transit gateway.
 8) Test transit gateway via ping command for ec2 instnaces using private ip addresses of public/private instnaces.
 
+## Notice
+If we want to have mechanism to have private and public subnets in vpc-s, and to make there two vpc-s public subnets talk to each other via
+transit gateway and want to isolate private subnets and ec2 instances in them, we can easily configure private subnet's reoute table to only
+support destination with same cidr as subnet ( or vpc-s cidr for same cidr as vpc ) and target to local, which means that only elements from within subnet/vpc
+can talk to each other.
