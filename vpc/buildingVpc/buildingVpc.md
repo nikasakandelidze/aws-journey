@@ -17,3 +17,6 @@ If we want to have mechanism to have private and public subnets in vpc-s, and to
 transit gateway and want to isolate private subnets and ec2 instances in them, we can easily configure private subnet's reoute table to only
 support destination with same cidr as subnet ( or vpc-s cidr for same cidr as vpc ) and target to local, which means that only elements from within subnet/vpc
 can talk to each other.
+
+Basically if route of subnet doesn't have forwarding to transit gateway as a record in route table it can't communicate over transit gateway, even if some other
+subnet in same vpc has it.
