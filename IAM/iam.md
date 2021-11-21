@@ -12,6 +12,13 @@ For this last specific case the solution is to create IAM roles which will have 
 After creating this role from IAM dashboard from console or via CLI we then associate already running ec2 instance from ec2 instance dashboard menu with this newly created IAM role ( from 
 security configuration ). After this process, ec2 instance and all the programs running there will have explicit permission to access other AWS resources ( in this specific case s3 bucket ) 
 
+## Idea
+The main idea before mechanism of roles for accessing different aws services ( like ec --> s3 ) is that all requests, no matter from inside of vpc or outside of vpc to AWS services must
+be cryptograhpically signed. ( Like if you want to write an app, like aws s3 wrapper, which using http requests of get and post to your app endpoints modifies s3 bucket. For this to work on
+local or any machine your app has to use acces key on your local machine, which by default is located in your systems folder hirearchy if you have used aws cli even once). Just since it's not awlays
+safe and easy to use mechanism to have access key permanent on your machine roles ( maybe profiels ) ease this process of granting temporary keys by which app can acces aws services and which will
+automatically time out and they won't be persisted in storage on some machine which can be hacked. 
+
 ### Profiles
 On a code  and implementaiton level it's interesting how to manage and get all the security/role config. necessary to access role assumed aws services.
 
