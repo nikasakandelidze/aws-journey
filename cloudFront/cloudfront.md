@@ -49,5 +49,19 @@ serving static content, for cases like this cloud front would be a great idea si
 - Persistent connections: one cool fact is that Cloudfront maintains persistent connections to origins and maximizes their reuse coefficient. Between cloud front and origin services
 traffic is routed via private backbone network of AWS which reduces latency and increases reliabilty.
 
+## Security
+Sometimes it's the case that contents of cloudFront must be secured, and not freely accessible to anyone who has an access to a url of content of CloudFront.
+In this case best solution already stated by aws CloudFront is to use signedUrls or signedCookies. We create a separate application where user logs in using
+credentials and the login service returns either signed cookie or signed url ( this signature is used using public key of keypair let's say cloudfrontKeyPair ).
+Then user uses this signed data to access cloudFront data and since cloudFront service has access to cloudFrontKeyPair private key, it can validate request. 
+
+If you use signed urls or signed cookies for cloudFront it secures your urls of cloudfront but if any user still has original S3 or some other origin resource url saved
+they can easelly bypass cloudFront security and directly access s3, so we want to avoid this.
+1) Create OAI(origin access identity) which is a special cloudfront user and associate it with your distribution 
+2) Change permission for S3 bucker or whatever origin resource you to give access to content only through OAI identity.
+This way only cloudFront accessed requests will be valid and no bypass methods will be available.
+
+You can create OAI-s from CloudFront dashboard on the left menu bar.
+
 ## Diagram of cost mechanism of cloud front, to visualize that it is not expensive mechanism
 ![diagram cloudfront cost](./diagram.png)
