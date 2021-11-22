@@ -38,3 +38,16 @@ We might use this mechanism let's say to only grant read permissions from s3 to 
 - Viewer protocol policy: HTTP and HTTPS, HTTP -> HTTPS, HTTPs only
 - Allowed HTTP method
 - Restrict Viewer access
+
+## Common practices
+It is a well know fact that AWS CloudFront is widely used for front end static contents, like css html js files, which need fast distribution all aroud the internet.
+But while developing architecture for backend systems it might also be a good idea to use cloud front for our services, specifically for ec2 instances serving dynamic and/or static content.
+We must notice that by this way we can boost  performance, security, and cost benefits you get when using CloudFront to serve dynamic and/or static assets from Amazon EC2
+
+- Cachable content: While lots of users have their static data on S3 buckets, there are also many usecases when ec2 is running some kind of web server like nginx and that web server is
+serving static content, for cases like this cloud front would be a great idea since it will reduce origin’s workload and bandwidth utilization while bringing content closer to viewers. This reduces the latency of serving static content.
+- Persistent connections: one cool fact is that Cloudfront maintains persistent connections to origins and maximizes their reuse coefficient. Between cloud front and origin services
+traffic is routed via private backbone network of AWS which reduces latency and increases reliabilty.
+
+## Diagram of cost mechanism of cloud front, to visualize that it is not expensive mechanism
+![diagram cloudfront cost](./diagram.pn)
