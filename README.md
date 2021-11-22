@@ -11,6 +11,12 @@
 	- [S3 general](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/aws-storage.md)
 - [VPC](https://github.com/nikasakandelidze/aws-notes/blob/main/vpc)
 	- [VPC general](https://github.com/nikasakandelidze/aws-notes/blob/main/vpc/vpc.md)
+- [CloudFront](https://github.com/nikasakandelidze/aws-notes/tree/main/cloudFront)
+	- [CloudFront general](https://github.com/nikasakandelidze/aws-notes/blob/main/cloudFront/cloudfront.md)
+- [IAM](https://github.com/nikasakandelidze/aws-notes/tree/main/IAM)
+	- [IAM General](https://github.com/nikasakandelidze/aws-notes/blob/main/IAM/iam.md)
+- [Storage/Persistence](https://github.com/nikasakandelidze/aws-notes/tree/main/storage)
+	- [General Storage](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/storage.md)
 - [legal](https://github.com/nikasakandelidze/aws-notes/blob/main/legal/legal.md)
 
 ## One of the resources that has all the data in it very detailed is official docs:
