@@ -50,4 +50,4 @@ serving static content, for cases like this cloud front would be a great idea si
 traffic is routed via private backbone network of AWS which reduces latency and increases reliabilty.
 
 ## Diagram of cost mechanism of cloud front, to visualize that it is not expensive mechanism
-![diagram cloudfront cost](./diagram.pn)
+![diagram cloudfront cost](./diagram.png)
