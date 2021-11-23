@@ -37,6 +37,15 @@ If you open up hosted zones page, you will see there NS record with values of al
 also there will be SOA record which is start of authority which has some metadata in it bout public hosted zone.
 
 
+## Routing policies
+- Simple routing policy: Use for a single resource that performs needed action, like web server from ec2 instance, or s3 for serving media files, or serving something from
+behind of load balancer. For this policy you can't create several records with same naem and type. But you can create records with multiple values specified like 
+multiple ip addresses, and they all will be returned in random order to originator of dns query. User can create Alias record for this policy, and with alias records
+you can enjoy health checks. Also user can create non-Alias basic record, for some ip address of some resource/server, but for it you can't attach healthechk mechanism. 
+- Weighted routing policy: weighted routing policy is just what is sounds like, you can create several records with same name and type and same/different 
+weidhts associated with them. ( this wasn't possible in simple routing policy ). And fraction of weight to toal sum of weights percent of traffic will
+be forwarded to speciific targets.    
+
 ## Hosted zones
 There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
 when you create your public hosted zones and you want to host it on route53 ( this autmoatically gets created when you create new domain name with correct config) route53 will automatically allocate 4 name servers to be responsible for your records. These are the 4 authoritative name servers that know data about
@@ -50,7 +59,7 @@ We have two ways to solve this problem:
 1) Add elastic load balancer in front of two these ec2 instnaces ( by creating it and specifying as target of load balancer both instances ) and associate dns with
 elastic load balancer using Alias record ind dns service route53
 2) Directly add both of ec2 instance ip addresses as targets in dns record targets. This way when client asks for ip addresses from dns service, dns service will return
-both addresses and client itself should decide which to contact ( maybe best strategy here will be to ping one till it's dead and only than jump to next one )    
+both addresses and client itself should decide which to contact ( maybe best strategy here will be to ping one till it's dead and only than automatically jump to next one )    
 
 ## SLA
 Route53 guarantees 100 percent SLA, which means that all the queries sent to route53 will be answered all the time.
