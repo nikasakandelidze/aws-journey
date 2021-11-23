@@ -13,9 +13,20 @@ numbers as machines are, so we dont want to remember ip address of google.com le
 - Domain name: Human readable mapping to ip address.
 - Top level domain server: servers that have records for routing .com, .org, .net and etc domain mappings.
 - Subdomain: maps.google.com is subdomain fo google.com. Main host is same, main domain name is same but there is preappendend some more data.
-- Domain registrar: Company accredited by ICANN to process domain registrations for TLD servers.
+- Domain registrar: Company accredited by ICANN to process domain registrations for TLD servers. for AWS it's AWS and Gandi.
 - Domain registry: a company who can sell tld domain names, like go daddy?
 - Name servers: servers in dns system that themselves translate and store ip <--> domain name mapping themselves.
+
+## Whole process of using route53
+- If you want to create a web application you must have a domain name for it. You must choose a unique/available domain name to register it in route53.
+If the domain is already taken you can try changing the top level domain like .com to .org .ninja or etc.
+- When you register a domain in route53 the service automatically makes itself the DNS service for the domain:
+	- Creates a hosted zone that has the same name as your domain
+	- Assings a set of 4 name servers, all located in unique stripes ( unique TLD-s )
+	- ..
+- At the end of registration AWS sends your info to Domain Rregistrat ( It's AWS itself or Gandi )
+- Registrar sends your info to registry for the domain. A registry is a company that sells domain registration for one or more TLD-s such as .com.
+- The registry stores the information about your domain in their own database and also stores some of the information in the public WHOIS database.
 
 ## Hosted zones
 There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
