@@ -17,6 +17,8 @@
 	- [IAM General](https://github.com/nikasakandelidze/aws-notes/blob/main/IAM/iam.md)
 - [Storage/Persistence](https://github.com/nikasakandelidze/aws-notes/tree/main/storage)
 	- [General Storage](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/storage.md)
+- [Route53](https://github.com/nikasakandelidze/aws-journey/tree/main/route53)
+	- [General Route53](https://github.com/nikasakandelidze/aws-journey/blob/main/route53/route53.md)
 - [legal](https://github.com/nikasakandelidze/aws-notes/blob/main/legal/legal.md)
 
 ## One of the resources that has all the data in it very detailed is official docs:
