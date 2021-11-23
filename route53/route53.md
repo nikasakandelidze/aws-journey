@@ -28,6 +28,15 @@ If the domain is already taken you can try changing the top level domain like .c
 - Registrar sends your info to registry for the domain. A registry is a company that sells domain registration for one or more TLD-s such as .com.
 - The registry stores the information about your domain in their own database and also stores some of the information in the public WHOIS database.
 
+## Routing and records
+Basically saying when you input domain name and create it and Route53 aoutmatically sets up dns service for you, this is the route that a traffic from anyone's machine
+must travel to get to this newly created dns name servers. After reaching this point how traffic will continue to flow inside and to your AWS services or entities
+is up to administrator of AWS account. All this inner routing mechanisms are implemented using different types of records that we must add into  route53 allocatted name servers.
+
+If you open up hosted zones page, you will see there NS record with values of all name server records ( 4 values ) that hosted zone creates by default.
+also there will be SOA record which is start of authority which has some metadata in it bout public hosted zone.
+
+
 ## Hosted zones
 There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
 when you create your public hosted zones and you want to host it on route53 ( this autmoatically gets created when you create new domain name with correct config) route53 will automatically allocate 4 name servers to be responsible for your records. These are the 4 authoritative name servers that know data about
@@ -35,6 +44,13 @@ records you add. If you see TLD endings for these name servers you'll see that t
 They are called stripes and they are all independent. So when you want to create hosted zone for some domain some available name servers from these
 stripes will be allocated to your needs.
 
+## Common patterns
+Let's say we have several ec2 instances of the same application, for high load purposes. Now we want to add DNS mechanism to our service. 
+We have two ways to solve this problem:
+1) Add elastic load balancer in front of two these ec2 instnaces ( by creating it and specifying as target of load balancer both instances ) and associate dns with
+elastic load balancer using Alias record ind dns service route53
+2) Directly add both of ec2 instance ip addresses as targets in dns record targets. This way when client asks for ip addresses from dns service, dns service will return
+both addresses and client itself should decide which to contact ( maybe best strategy here will be to ping one till it's dead and only than jump to next one )    
 
 ## SLA
 Route53 guarantees 100 percent SLA, which means that all the queries sent to route53 will be answered all the time.
