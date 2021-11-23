@@ -1,5 +1,8 @@
 # AWS Route53 dns
-Route53 is DNS service
+Route53 is DNS service. AS you know internet is simply a interconnected nodes of many computers, when one machine wants to talk to another one it should get it's name, how to 
+call him, just like in real life situation, you must know a persons name if you want to have a good chat with them.
+Machines don't have names like humans do, but they have ip addresses 4 8byte expression from 0-255 that uniquely identify machines. Of course we are humans and we aint as good with
+numbers as machines are, so we dont want to remember ip address of google.com lets say, so we create DNS-s servers specialized in translating IP addresses into names and vice versa.
 
 ## Route53 features
 - Register domain names
