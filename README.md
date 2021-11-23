@@ -21,5 +21,8 @@
 	- [General Route53](https://github.com/nikasakandelidze/aws-journey/blob/main/route53/route53.md)
 - [legal](https://github.com/nikasakandelidze/aws-notes/blob/main/legal/legal.md)
 
+## Notice
+In directories for different topics you will mainly notice 2 kinds of files "*.png" and "*.md". Mainly .png files are used in .md files.
+
 ## One of the resources that has all the data in it very detailed is official docs:
 https://docs.aws.amazon.com/index.html
