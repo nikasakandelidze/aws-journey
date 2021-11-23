@@ -13,4 +13,8 @@ Route53 is DNS service
 - Domain registrar: Company accredited by ICANN to process domain registrations for TLD servers.
 - Domain registry: a company who can sell tld domain names, like go daddy?
 - Name servers: servers in dns system that themselves translate and store ip <--> domain name mapping themselves.
-- 
+
+## Basic diagram of route 53 
+![diagram](./diagram.png)
+
+As we see from the diagram, all the main heavy lifting job is done by a DNS resolver server, which is provided mainly by ISP-s
