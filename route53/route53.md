@@ -17,6 +17,17 @@ numbers as machines are, so we dont want to remember ip address of google.com le
 - Domain registry: a company who can sell tld domain names, like go daddy?
 - Name servers: servers in dns system that themselves translate and store ip <--> domain name mapping themselves.
 
+## Hosted zones
+There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
+when you create your public hosted zones and you want to host it on route53 ( this autmoatically gets created when you create new domain name with correct config) route53 will automatically allocate 4 name servers to be responsible for your records. These are the 4 authoritative name servers that know data about
+records you add. If you see TLD endings for these name servers you'll see that they are all for different TLD-s ( like .net, .com, .org ..etc )
+They are called stripes and they are all independent. So when you want to create hosted zone for some domain some available name servers from these
+stripes will be allocated to your needs.
+
+
+## SLA
+Route53 guarantees 100 percent SLA, which means that all the queries sent to route53 will be answered all the time.
+
 ## Basic diagram of route 53 
 ![diagram](./diagram.png)
 
