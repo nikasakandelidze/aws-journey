@@ -45,6 +45,9 @@ you can enjoy health checks. Also user can create non-Alias basic record, for so
 - Weighted routing policy: weighted routing policy is just what is sounds like, you can create several records with same name and type and same/different 
 weidhts associated with them. ( this wasn't possible in simple routing policy ). And fraction of weight to toal sum of weights percent of traffic will
 be forwarded to speciific targets.    
+- Latency policy: can create several A records with same name and different ip address values ( let's say for different ec2 instances in different regions ). Latency policy when getting a query will
+automatically understand which ec2 instance is closer to the region of user who queried dns and will use that ip address. This determination of closer ec2 instance region is not taking place exactly at the moment
+when dns query is recieved. It in the background process takes place, to have approximate idea about locations and latencies and when query is recieved the target is taken depending on these data collected by time.
 
 ## Hosted zones
 There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
