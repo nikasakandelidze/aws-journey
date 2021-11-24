@@ -70,6 +70,12 @@ elastic load balancer using Alias record ind dns service route53
 2) Directly add both of ec2 instance ip addresses as targets in dns record targets. This way when client asks for ip addresses from dns service, dns service will return
 both addresses and client itself should decide which to contact ( maybe best strategy here will be to ping one till it's dead and only than automatically jump to next one )    
 
+## Record types
+- A: Map domain to ip address
+- CNAME: map domain to another domain, redirection mechanism
+- NS: Name server, identifies ip address of a server who has A record for some domain
+- MX: to which mail server to forward your domains mail
+
 ## SLA
 Route53 guarantees 100 percent SLA, which means that all the queries sent to route53 will be answered all the time.
 
