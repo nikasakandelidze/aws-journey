@@ -52,6 +52,8 @@ when dns query is recieved. It in the background process takes place, to have ap
 is not specified in any record.
 - Failover routing policy: you can create two records with same name, in values you must place ip addresses of primary and secondary aws resources. Introduce healthcheck mechanism in route53 to primary resource. Once
 that resource fails healthcheck will fail for that resource, which will tell route53 to provide further dns queries for this specific name with failover, secondary resource ip address.
+- Multivalue answer policy: works like simple routing policy but main idea for this policy is to associate healthcheck with all resource ip addresses in this record's value and periodically check
+which ones are healthy and only return healthy ones when dns query arrives. Note that if no health check is associated route53 assumes that for a record with this routing policy and no helathcheck resource is always healthy. 
 
 ## Hosted zones
 There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
