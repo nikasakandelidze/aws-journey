@@ -1,4 +1,6 @@
 # aws-notes
+This is a catalogue, notes and main concepts taken from my kourney to AWS solutions architect ( in progress ).
+In the catalogue below you can see all the topics, notes and ideas taken down while learning these concepts.
 
 # Table of contents
 - [catalogue](https://github.com/nikasakandelidze/aws-notes/blob/main/catalogue.md)
