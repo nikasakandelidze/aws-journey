@@ -48,6 +48,10 @@ be forwarded to speciific targets.
 - Latency policy: can create several A records with same name and different ip address values ( let's say for different ec2 instances in different regions ). Latency policy when getting a query will
 automatically understand which ec2 instance is closer to the region of user who queried dns and will use that ip address. This determination of closer ec2 instance region is not taking place exactly at the moment
 when dns query is recieved. It in the background process takes place, to have approximate idea about locations and latencies and when query is recieved the target is taken depending on these data collected by time.
+- Geolocation routing policy: forward users to ip addresses of some reousrces ( let's say ec2 instances ) depending on their geo location, setup default record to cover case that user comes from the geolocation which
+is not specified in any record.
+- Failover routing policy: you can create two records with same name, in values you must place ip addresses of primary and secondary aws resources. Introduce healthcheck mechanism in route53 to primary resource. Once
+that resource fails healthcheck will fail for that resource, which will tell route53 to provide further dns queries for this specific name with failover, secondary resource ip address.
 
 ## Hosted zones
 There are private and public hosted zones, public obviously is for public DNS features, when you want for users from public internet to get to your servers let's say. Private is for internal VPC use. 
