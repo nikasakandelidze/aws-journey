@@ -35,3 +35,6 @@ We dont upload created AMI during ebs stored volume anywhere since EBS itself is
 must after creating AMI from customized ec2 instance store it somewhere safe and this storage can be S3 ofcourse. and then use s3 stored ami to create new instances.
 
 ![diagram3](./ami-instance-store.png)
+
+## final
+Basically EBS backed AMI creation is easier process since it automatically uses ebs snapshot to capture the state of instnace ( with softwarem file system and etc on it). With instance-store AMI creation you must explicitly bundle your ami and put it on s3 bucekt and later use it from s3 bucket.
