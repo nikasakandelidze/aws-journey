@@ -5,7 +5,7 @@ configuration.
 
 
 AMI includes:
-- One or more Elastic block store snapshots. or for instance-store-backed AMI-s a template for the root volume of the instnace.  
+- One or more Elastic block store snapshots. or for instance-store-backed AMI-s a template for the root volume of the instnace.( which means which storage option to use ) 
 - Launch permissions that control which aws accounts can use AMI to run ec2 instances.
 - Block device mapping that specifies volumes to attach to instance when it starts up.
 
@@ -27,12 +27,13 @@ The root device of an instance determines the actual creation process of AMI
 
 - Launching using EBS: AMI #1 is first ami that is used to launch first ec2 instance (#1). Instance #1 has elastic block store associated with it.
 You customize instnace and create an AMI #2 from instance#1 which contains all the updates and we can now use ami #2 to launch new instances.
-We dont upload created AMI during ebs stored volume anywhere since EBS itself is persistent storage, and we'll in this case pay for storing cost in EBS.
+Amazon EBS-backed AMI – The root device for an instance launched from the AMI is an Amazon Elastic Block Store (Amazon EBS) volume created from an Amazon EBS snapshot.
 
 ![diagram2](./ami-ebs.png)
 
 - Launching using instance-store: Main idea here is basically same as in EBS step( previous one ) just since instance-store isnot a persistent storage we
 must after creating AMI from customized ec2 instance store it somewhere safe and this storage can be S3 ofcourse. and then use s3 stored ami to create new instances.
+Amazon instance store-backed AMI – The root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.
 
 ![diagram3](./ami-instance-store.png)
 
