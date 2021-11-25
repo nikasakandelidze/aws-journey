@@ -34,4 +34,4 @@ We dont upload created AMI during ebs stored volume anywhere since EBS itself is
 - Launching using instance-store: Main idea here is basically same as in EBS step( previous one ) just since instance-store isnot a persistent storage we
 must after creating AMI from customized ec2 instance store it somewhere safe and this storage can be S3 ofcourse. and then use s3 stored ami to create new instances.
 
-![diagram3](./ami-instance-store.pn)
+![diagram3](./ami-instance-store.png)
