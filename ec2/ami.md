@@ -29,10 +29,14 @@ The root device of an instance determines the actual creation process of AMI
 You customize instnace and create an AMI #2 from instance#1 which contains all the updates and we can now use ami #2 to launch new instances.
 Amazon EBS-backed AMI – The root device for an instance launched from the AMI is an Amazon Elastic Block Store (Amazon EBS) volume created from an Amazon EBS snapshot.
 
+When you want to create AMI from running ec2 instance, Amazon ec2 powers down instance to guarantee everything is in a consistent state. AWS ec2 than creates
+a snapshot for ec2 ebs volume. and later whenever we start up a new instance from this AMI this specific snapshot will be used as a baseline of root storage.
+
 ![diagram2](./ami-ebs.png)
 
-- Launching using instance-store: Main idea here is basically same as in EBS step( previous one ) just since instance-store isnot a persistent storage we
-must after creating AMI from customized ec2 instance store it somewhere safe and this storage can be S3 ofcourse. and then use s3 stored ami to create new instances.
+- Launching using instance-store: Main idea here is basically same as in EBS step( previous one ) just since instance-store doesn't have snapshot mechanism like
+EBS  we must by hand bundle it up and It takes several minutes for the bundling process to complete. After the process completes, you have a bundle, which consists of an image manifest (image.manifest.xml) and files (image.part.xx) that contain a template for the root volume. Next you upload the bundle to your Amazon S3 bucket and then register your AMI.  and then use s3 stored ami to create new instances.
+When you launch an instance using the new AMI, we create the root volume for the instance using the bundle that you uploaded to Amazon S3. The storage space used by the bundle in Amazon S3 incurs charges to your account until you delete it. For more information, see Deregister your Linux AMI.
 Amazon instance store-backed AMI – The root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.
 
 ![diagram3](./ami-instance-store.png)
