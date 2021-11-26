@@ -28,3 +28,11 @@ Variables that detemine reserved instnace pricing:
 - Term commitment: one-year or three years
 - Payment options: all upfront, partial upfront, no upfront
 - Offering class: standard, convertible.
+
+## Ec2 spot instances
+Spot instnaces are like auctions for spare ec2 compute power, you are bidding actively to use compute power.
+If you are running some stuff on bidded/won instance might terminate in case someone iverbids your last bid.
+So basically using spots might benefit usecases where restarting the process is not a big deal.
+AWs sends rebalance recommendation when your ec2 instance is about to temrinate
+
+
