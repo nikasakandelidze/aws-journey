@@ -19,6 +19,9 @@ There are two kinds of saving plangs:
 ec2 instance type and region doesn't matter, you just need to commit to compute to hour.
 - EC2 instance saving plans: reduces cost up to 72 percent, but in this case you must commit to 
 some famility type of ec2 instance and region in which it's deployed. ( let's say m5 in us-east-1 ). 
+- Ec2 instance saving plans are just like Reserved instances. They offer up to 66% doscount and same mechanism of commitment.
+It automatically normalizes your commit plan to your compute usage.
+
 
 ## EC2 reserved instances
 Reserced instances is not a physical instnace. they are simply a billing discount applied to on demand pricing of ec2.
@@ -28,6 +31,12 @@ Variables that detemine reserved instnace pricing:
 - Term commitment: one-year or three years
 - Payment options: all upfront, partial upfront, no upfront
 - Offering class: standard, convertible.
+- If you purchase a Reserved Instance and you already have a running On-Demand Instance that matches the specifications of the Reserved Instance, the billing discount is applied immediately and automatically. You do not have to restart your instances. If you do not have an eligible running On-Demand Instance, launch an On-Demand Instance with the same specifications as your Reserved Instance
+- If you reserve instance for t2.medium and then run 2 t2.small-s, then it will also be covered by reservation since small = large / 2.
+and also if you run Xlarge then half of it will be covered by discount of reservation. This mechanism is called a reservation.
+- Reserved Instances are automatically applied to running On-Demand Instances provided that the specifications match. If you have no running On-Demand Instances that match the specifications of your Reserved Instance, the Reserved Instance is unused until you launch an instance with the required specifications.
+
+
 
 ## Ec2 spot instances
 Spot instnaces are like auctions for spare ec2 compute power, you are bidding actively to use compute power.
