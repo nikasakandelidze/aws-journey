@@ -8,11 +8,11 @@ Most expensive and most widely used one.
 - Full control over instance lifecycle ( strat, stop, hibernate, terminate )
 - Price is fixed for every second ec2 instance is in a running state.
 -  Good for short term workloads that can not /must not be interrupted.
+- If in stopped state you don't pay for ec2 istance but you will pay for ebs volume attached ( if you have ofc )
 
 
 ## EC2 savings plan
 Flexible model to save money spent on ec2
-zs:1: command not found: claer
 aws offers some discounts.
 There are two kinds of saving plangs:
 - Compute savings plan: commit to just $/hour and reduce costs up to 66 percents. During this plan
@@ -35,4 +35,13 @@ If you are running some stuff on bidded/won instance might terminate in case som
 So basically using spots might benefit usecases where restarting the process is not a big deal.
 AWs sends rebalance recommendation when your ec2 instance is about to temrinate
 
+## Dedicated host
+Physical server with ec2 capacity on it fully dedicated to you.
+This is the way if you want to use your own licenses for some software.  
+On dedicated host variant you can see number of cores on machine and number of sockets ( in other cases you can't access this info )
+Dedicated host also allows you to consistently deploy ec2 instances to the same host ( in dedicated instance you can't do that ) 
+Automatic instance recovery is supported for dedacted host and also for dedicated instnace.
+
+## Ec2 capacity reservation
+Reserve capacity in a region without entering several year term agreement.
 
