@@ -45,3 +45,6 @@ Automatic instance recovery is supported for dedacted host and also for dedicate
 ## Ec2 capacity reservation
 Reserve capacity in a region without entering several year term agreement.
 
+
+## interesting
+Ec2 can be in two subnets simultanisl by attaching two ENI-es to same ec2 and having those eni-s in different subnets.
