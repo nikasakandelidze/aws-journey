@@ -30,3 +30,12 @@ Snapshot can be coppied in different regions.
 - general purpose (gp2 and gp3 ). balanced power and price.
 - io1 and io2, with more IOPS workload.
 - st1, HDD which is slower but has low cost big data stroing capability.
+
+## EBS Raids
+there are 2 types of raids for aws ebs disks. This is the strucutre of how multiple disk storages are used for different benefits.
+- Raid 0 mechanism is used to benefit faster IO, since several disks are used paralelly. In the case of raid 0 data is not replicated on multiple volumes. 
+so even though IO speed might increase if data is lost from one volume it gets fully deleted.
+
+- Raid 1 mechanism is used to benefit durability by replicaiton of volumes, so raid 1 should be usedd when data-s security and reliability is more
+important than it's IO speed.
+
