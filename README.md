@@ -13,6 +13,7 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 	- [EC2 lifecycle](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-lifecycle.md)
 	- [EC2 instance store](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-instance-store.md)
 	- [Advanced EC2](https://github.com/nikasakandelidze/aws-notes/blob/main/ec2/advanced-ec2.md)
+	- [Elastic Load Balancer](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/elastic-load-balancer.md)
 - S3
 	- [S3 general](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/aws-storage.md)
 - VPC
