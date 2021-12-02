@@ -39,7 +39,7 @@ Diagram for cross zone load balancing
 - Application load balancers: Routes Http and Https level traffic. First evaluate listeners registered to understand which rules to apply. Select target from the target group associated. Usual algorithm for choosing
 target from a target group is round robin. 
 - Network load balancers: Routes TCP/ip level traffic, select target from target group using flow hash algorithm. algorithm is based on: protocol, soure ip and port, dest ip and port, tcp seq. num. after this
-algorithm routes each tcp connection to target for it's lifetime.
+algorithm routes each tcp connection to target for it's lifetime. 
 
 ## HTTP headers
 application and classic load balancers add headers forwareded-to, forwarded-proto, forwarded-Port. 
@@ -47,3 +47,14 @@ application and classic load balancers add headers forwareded-to, forwarded-prot
 ## Health checks
 When ELB notices unhealthy instance it just stops routing traffic to it, and then continues to periodically check for it's health. Whenevr resource comes back to life
 ELB will include this resource in further output of routing algorithm.
+
+
+## Application load balancer
+Works at OSI level 7 ( using http or https ). 
+Single point of contact for client requests, and under the hood manages many resources.
+Distributes application traffic across many targets/resources in multiple AZ-s which increases app-s availabilty.
+Add listeners to your ALB to route requests on defined ports and protocols using routing rules.
+Rules have a priority, actions and conditions.
+Each rule must have a default action.
+Uses target groups
+
