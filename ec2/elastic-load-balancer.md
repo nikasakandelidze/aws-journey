@@ -48,6 +48,8 @@ application and classic load balancers add headers forwareded-to, forwarded-prot
 When ELB notices unhealthy instance it just stops routing traffic to it, and then continues to periodically check for it's health. Whenevr resource comes back to life
 ELB will include this resource in further output of routing algorithm.
 
+## Load balancer basics 
+![elb](./elb-components.png)
 
 ## Application load balancer
 Works at OSI level 7 ( using http or https ). 
@@ -56,5 +58,8 @@ Distributes application traffic across many targets/resources in multiple AZ-s w
 Add listeners to your ALB to route requests on defined ports and protocols using routing rules.
 Rules have a priority, actions and conditions.
 Each rule must have a default action.
-Uses target groups
+
+Very often path based routing is used for application level load balancing.
+
+## Network load balancer
 
