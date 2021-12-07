@@ -6,14 +6,17 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 - [catalogue](https://github.com/nikasakandelidze/aws-notes/blob/main/catalogue.md)
 - general
 	- [General services info](https://github.com/nikasakandelidze/aws-notes/blob/main/general/generalServices.md)
-- EC2
-	- [EC2 general](https://github.com/nikasakandelidze/aws-notes/tree/main/ec2/ec2.md)
-	- [Amazon Machine Images](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ami.md)
-	- [EC2 finances](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-finanfce.md)
-	- [EC2 lifecycle](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-lifecycle.md)
-	- [EC2 instance store](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-instance-store.md)
-	- [Advanced EC2](https://github.com/nikasakandelidze/aws-notes/blob/main/ec2/advanced-ec2.md)
-	- [Elastic Load Balancer](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/elastic-load-balancer.md)
+- Compute
+	- EC2
+		- [EC2 general](https://github.com/nikasakandelidze/aws-notes/tree/main/ec2/ec2.md)
+		- [Amazon Machine Images](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ami.md)
+		- [EC2 finances](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-finanfce.md)
+		- [EC2 lifecycle](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-lifecycle.md)
+		- [EC2 instance store](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-instance-store.md)
+		- [Advanced EC2](https://github.com/nikasakandelidze/aws-notes/blob/main/ec2/advanced-ec2.md)
+		- [Elastic Load Balancer](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/elastic-load-balancer.md)
+	- Lambda
+		- [lambda general](https://github.com/nikasakandelidze/aws-journey/blob/main/lambda/aws-lambda.md)	
 - S3
 	- [S3 general](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/aws-storage.md)
 - VPC
