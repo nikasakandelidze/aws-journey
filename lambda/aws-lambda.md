@@ -64,3 +64,8 @@ To give your function access to the internet, route outbound traffic to a NAT ga
 ![lambda in vpc](./lambda-vpc.png)
 
 Its important to remember that to create ENI-s in a vpc-s subnet aws lambda must have according roles permitting these stuff.
+
+## Concurrency
+AWS lambda functions' concurrency is the number of instances that serve requests at a given time.
+When requests come in faster than your function can scale, or when your function is at maximum concurrency, additional requests fail with a throttling error (429 status code).
+
