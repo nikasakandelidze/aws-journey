@@ -69,3 +69,13 @@ Its important to remember that to create ENI-s in a vpc-s subnet aws lambda must
 AWS lambda functions' concurrency is the number of instances that serve requests at a given time.
 When requests come in faster than your function can scale, or when your function is at maximum concurrency, additional requests fail with a throttling error (429 status code).
 
+## AWS lambda permissions
+You must configure accordint IAM roles with according policies for your lambda function to be able to access and work with other AWS resources, like S3, DynamoDB and etc.
+AWS lambda has execution roles that allow lambda function do exactly what was stated above.
+There are some policies manged by aws lambda itself and created for it:
+- AWSLambdaBasicExecutionRole – Permission to upload logs to CloudWatch.
+- AWSLambdaDynamoDBExecutionRole – Permission to read records from an Amazon DynamoDB stream.
+- AmazonS3ObjectLambdaExecutionRolePolicy – Permission to interact with Amazon S3 Object Lambda.
+and etc.
+
+You can allow other accounts to use your aws lambda functions by using resource-based policies. 
