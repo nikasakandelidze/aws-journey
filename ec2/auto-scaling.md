@@ -30,6 +30,14 @@ These are the key components of autoscalling:
 ## Pricing
 There are no additional fees with Amazon EC2 Auto Scaling, so it's easy to try it out and see how it can benefit your AWS architecture. You only pay for the AWS resources (for example, EC2 instances, EBS volumes, and CloudWatch alarms) that you use.
 
+## Auto scalling options
+- Maintain current instance levels at all the time
+- Scale manually
+- Scale based on a schedule
+- Scale based on demand/ dynamic scaling
+	- Target tracking scaling	
+- Use predictive scaling
+
 ## Auto scalling benefits
 - EC2 autoscalling group can detect if any instance becomes unhleathy and can replace it without any manual intervention needed. 
 - Better availability, since you can configure ec2 instances for auto scalling group in several different AZ-s.
