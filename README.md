@@ -10,6 +10,7 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 	- EC2
 		- [EC2 general](https://github.com/nikasakandelidze/aws-notes/tree/main/ec2/ec2.md)
 		- [Amazon Machine Images](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ami.md)
+		- [Auto scalling](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/auto-scaling.md)
 		- [EC2 finances](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-finanfce.md)
 		- [EC2 lifecycle](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-lifecycle.md)
 		- [EC2 instance store](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/ec2-instance-store.md)
