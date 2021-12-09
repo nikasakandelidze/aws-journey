@@ -47,3 +47,8 @@ An Auto Scaling group can contain EC2 instances in one or more Availability Zone
 1 auto scalling group has one to many relationship between subnets/avaliablity zones. So 1 auto sacling group can have many subnets associated with it.
 As stated before auto scalling group can span multiple AZ-s but it must strictly be in one region, it can't span multiple regions.
 AWS auto scalling always tries to distribute ec2 instnaces between availabiltiy zones uniformly but if because of some reason it is not possible resources will be always used at their best.
+
+## Creation of auto scalling group
+When you want to create auto scalling group first you must create configuration template. After it you can start creating auto scalling group using this template.
+One of the most important topics here is if ELB should be used to distribute your traffic betweem ec2 instances. In the majority of cases you should use ELB,
+and one important detail is that you should always match availability zones you choose for your auto scalling groups with the availiablity zones that your ELB uses.
