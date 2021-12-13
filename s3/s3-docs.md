@@ -1,6 +1,10 @@
 # Simple Storage Service
 AWS s3 is an object storage service that offers scalable, highly avaiable store for any kind of data.
 
+## S3 architecture
+Undert the hood S3 is a basic highly available server app, which exposes HTTP verb api-s and abstracts actual data persistence. Detailed design can be seen in the image below.
+![aws s3 arch](./s3-architecture.png)
+
 ## Storage classes
 - S3 Standard, general purpose - is used in most of the use cases, it offers high availability, durability, low latency for retrievals and etc.
 This is the most widely used configuration class for s3. Offers nine 9-s SLA.
