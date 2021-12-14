@@ -84,6 +84,8 @@ apart from standard s3 storage that cost less money and have other config. types
 - expiration:  These actions define when objects expire. Amazon S3 deletes expired objects on your behalf.
 You can use transitions for latest XOR previous verrsions.
 You can have multiple lifecycle methods for different versions.
+There might be a slight delay between timeout for lifecycle method invocation and actual result seen by you as a  client. Rules are true after exact time and not
+depending on whether it's visible or not by user.
 
 general diagrma flow for s3 life-cycle
 ![lifecycle](./s3-lifecycle.png)
