@@ -75,3 +75,20 @@ S3 versioning might create performance problems. If some objects in a bucket get
 ## Multi factor auth delete
 You can enable it. ( maybe when data stored in s3 is literally mission critical )
 
+## S3 object life-cycle methods
+S3 object lifecycle methods are mechanisms for saving costs for objects stored in s3 buckets and that haven't been accessed or used for some threshold amount of time.
+This mechanism if the most cost effective way to store objects in s3.
+There are 2 configurable knobs in life-cycle configs:
+- transitions: In how much time after creation should some object be transfered to another class of s3 storage. Since this way we can save money, cause there are other storage classes
+apart from standard s3 storage that cost less money and have other config. types.    
+- expiration:  These actions define when objects expire. Amazon S3 deletes expired objects on your behalf.
+
+general diagrma flow for s3 life-cycle
+![lifecycle](./s3-lifecycle.png)
+
+General usages of s3 lifecycle transitions and termination are easy to grasp, but there is one interesting edge case which we must concentrate on.
+If you have some objects in s3 that you don't know access frequency and pattern of you can using transition mechanism of lifecycle move it to intelligent storage class which will
+automaticaly manage storage classes for it.
+
+Generacl flow for s3 storage class flow
+![flow storage](./s3-ls-flow.png)
