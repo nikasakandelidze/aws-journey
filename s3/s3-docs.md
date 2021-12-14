@@ -82,6 +82,8 @@ There are 2 configurable knobs in life-cycle configs:
 - transitions: In how much time after creation should some object be transfered to another class of s3 storage. Since this way we can save money, cause there are other storage classes
 apart from standard s3 storage that cost less money and have other config. types.    
 - expiration:  These actions define when objects expire. Amazon S3 deletes expired objects on your behalf.
+You can use transitions for latest XOR previous verrsions.
+You can have multiple lifecycle methods for different versions.
 
 general diagrma flow for s3 life-cycle
 ![lifecycle](./s3-lifecycle.png)
