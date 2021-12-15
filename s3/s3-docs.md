@@ -96,3 +96,18 @@ automaticaly manage storage classes for it.
 
 Generacl flow for s3 storage class flow
 ![flow storage](./s3-ls-flow.png)
+
+## Cross region replication
+- Versioning must be turned on to replicate
+- Regeions for source and destination must be different.
+- CRR will apply to all the object added after enableing this feature.
+- You can change storage class for CRR
+- S3 should have according permission role to replicate on your behalf
+- Objects encrypted with sse-c dont get replicated, objects encrypted with other keys (sse-kms, sse-s3) gets replicated and
+is encrypted with the sam key.
+
+## S3 presigned url-s
+presigned url-s give temporary access to s3 for user.
+We can manually generate presigned url-s and give it to any user needed, but also pretty useful practice is to create lambda that will automate this process.
+![presigned ulr](./presigned-url.png)
+
