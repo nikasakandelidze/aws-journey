@@ -1,6 +1,7 @@
 # IAM ( Identity and Access Management )
 
-
+## Principal
+Principal is a person or some service that has permissions to access some kind of resource.  
 
 ## AWS roles
 AWS roles have many usecases and they are simillar to actual user entities of aws IAM. One of the most important and interesting usecases is if
@@ -36,4 +37,13 @@ A user group can't be identified as a "Principal" in a resource based policy.
 person role is assumed to be used by anyone who needs to use it. Roles are mostly used for aws services that need to access other aws services and not for physical users who want to use aws.  
 
 ## IAM Policies
-
+Policies are rules that you attach to IAM identities( user-groups, users, roles ). There are 6 types of policies:
+- Identity based policy: attached to users,user-groups and roles to control their permissions for resources. Further there are 2 types of identity polciies: managed and inline. 
+managed policies are explicityl created separate, reusable entities which also might be created by AWS or some person. inline policies aren't reusable. 
+- resource based policy: resource based policies are access rules that you attach directly to a resource needed to be used, and restrict or allow which principals can access it. If resource and principal
+are in the same account, only specifiying principal access in resource based policy is enough and no explicit IAM identity is needed to access resource, but if principal and resource are in different
+accoutns than explicit identity policy is also needed. 
+- permissions boundaries:
+- organizations SCP:
+- ACL:
+- session policies:
