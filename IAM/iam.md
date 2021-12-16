@@ -42,7 +42,7 @@ Policies are rules that you attach to IAM identities( user-groups, users, roles 
 managed policies are explicityl created separate, reusable entities which also might be created by AWS or some person. inline policies aren't reusable. 
 - resource based policy: resource based policies are access rules that you attach directly to a resource needed to be used, and restrict or allow which principals can access it. If resource and principal
 are in the same account, only specifiying principal access in resource based policy is enough and no explicit IAM identity is needed to access resource, but if principal and resource are in different
-accoutns than explicit identity policy is also needed. 
+accoutns than explicit identity policy is also needed. You can specify as user: iam id, aws lambda resource name and etc. 
 - permissions boundaries:
 - organizations SCP:
 - ACL:
