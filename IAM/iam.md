@@ -24,3 +24,16 @@ On a code  and implementaiton level it's interesting how to manage and get all t
 
 ## Diagram of using roles from ec2 to s3
 ![ec2->s3](./diagram.png)
+
+## IAM Identities
+IAM identities are entities from next group: user,user-group,role).
+They are all the needed definitions of service users that needs to be managed for aws cloud to be secure.
+- IAM users: IAM users are entities in aws cloud which you can assign to physical users to enable them to access limitied cloud funcitonality. ( these limits are set by the admin user ).
+This access for IAM user can be: console sign-in, programattic api request and etc. You can add user to some usergroup with some permissions or directly attach policies to it.
+- IAM user-groups: collection of IAM-users, using user-groups it's much easier to manage team that has different permissions to access the cloud functionalities.
+A user group can't be identified as a "Principal" in a resource based policy. 
+- IAM roles: roles are pretty much same as users, same identities. but with one big difference from users that roles don't have credentials. Instead of beeing exclusively associated with one physical
+person role is assumed to be used by anyone who needs to use it. Roles are mostly used for aws services that need to access other aws services and not for physical users who want to use aws.  
+
+## IAM Policies
+
