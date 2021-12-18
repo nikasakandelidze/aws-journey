@@ -32,6 +32,8 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 	- [General Storage](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/storage.md)
 - Route53
 	- [General Route53](https://github.com/nikasakandelidze/aws-journey/blob/main/route53/route53.md)
+- Database
+	- [RDS](https://github.com/nikasakandelidze/aws-journey/blob/main/database/RDS.md)
 - [legal](https://github.com/nikasakandelidze/aws-notes/blob/main/legal/legal.md)
 
 ## Notice
