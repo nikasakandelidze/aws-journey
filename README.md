@@ -28,6 +28,8 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 	- [CloudFront general](https://github.com/nikasakandelidze/aws-notes/blob/main/cloudFront/cloudfront.md)
 - IAM
 	- [IAM General](https://github.com/nikasakandelidze/aws-notes/blob/main/IAM/iam.md)
+- KMS
+	- [KMS general](https://github.com/nikasakandelidze/aws-journey/blob/main/kms/KMS.md)
 - Storage/Persistence
 	- [General Storage](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/storage.md)
 - Route53
