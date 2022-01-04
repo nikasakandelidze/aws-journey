@@ -17,7 +17,8 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 		- [Advanced EC2](https://github.com/nikasakandelidze/aws-notes/blob/main/ec2/advanced-ec2.md)
 		- [Elastic Load Balancer](https://github.com/nikasakandelidze/aws-journey/blob/main/ec2/elastic-load-balancer.md)
 	- Lambda
-		- [lambda general](https://github.com/nikasakandelidze/aws-journey/blob/main/lambda/aws-lambda.md)	
+		- [lambda general](https://github.com/nikasakandelidze/aws-journey/blob/main/lambda/aws-lambda.md)
+		- [Step functions](https://github.com/nikasakandelidze/aws-journey/blob/main/lambda/step-functions.md)	
 - S3
 	- [S3 general](https://github.com/nikasakandelidze/aws-notes/blob/main/storage/aws-storage.md)
 	- [S3 detailed](https://github.com/nikasakandelidze/aws-journey/blob/main/s3/s3-docs.md)
