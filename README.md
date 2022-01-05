@@ -25,6 +25,8 @@ In the catalogue below you can see all the topics, notes and ideas taken down wh
 	- [S3 Security](https://github.com/nikasakandelidze/aws-journey/blob/main/s3/s3-security.md)
 - VPC
 	- [VPC general](https://github.com/nikasakandelidze/aws-notes/blob/main/vpc/vpc.md)
+- Integration
+	- [SQS](https://github.com/nikasakandelidze/aws-journey/blob/main/integration/sqs.md)
 - CloudFront
 	- [CloudFront general](https://github.com/nikasakandelidze/aws-notes/blob/main/cloudFront/cloudfront.md)
 - IAM
